@@ -1,1 +1,36 @@
 npm run start
+
+
+docker-compose down
+docker-compose up --build
+
+
+docker-compose up --build
+    What it does:
+        Builds your images from scratch according to the Dockerfile and docker-compose.yml configurations (if there are changes).
+
+        Then, starts (or recreates) the containers with the newly built images.
+
+        If the containers don’t exist, it creates and starts them.
+
+    When to use:
+        When you made changes to your Dockerfile or application code and want to rebuild the images.
+
+        When you want to ensure containers run the latest build.
+
+
+
+docker-compose restart
+    What it does:
+
+        Stops the running containers and then starts them again without rebuilding images.
+
+        It just restarts the existing containers using the current images.
+
+    When to use:
+        When you want to restart the containers quickly, e.g., after configuration changes that don’t require rebuilding images.
+
+        When you want to refresh the running app without rebuilding.
+
+If you want to rebuild and restart everything fresh, use up --build.
+If you just want to restart without rebuilding, use restart.
